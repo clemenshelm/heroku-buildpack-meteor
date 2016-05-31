@@ -150,6 +150,13 @@ else
   npm install --quiet --userconfig $build_dir/.npmrc 2>&1 | indent
 fi
 
+####### Install newer simplesmtp version
+info "Installing newer simplesmtp version"
+# Delete the default buggy version
+rm -rf node_modules/simplesmtp
+# Install the new one
+npm install simplesmtp@0.3.34
+
 ####### Create a Procfile if possible
 
 head "Checking startup method"
